@@ -1,6 +1,6 @@
 package: github.com/mh-cbon/auto-gen-version
 scripts:
-  preversion: git fetch --tags && philea "go vet %s" "go fmt %s"
+  preversion: git fetch --tags && philea "go vet %s" "go fmt %s" && gen-version-file --ver=!newversion! && git add GenVersionFile/index.go && git commit -m "version update"
   postversion: git push && git push --tags
 import:
 - package: github.com/urfave/cli
