@@ -18,7 +18,6 @@ func main() {
 func Version () string {
   return "$VERSION"
 }
-
 `,
   }
   type LangWriter func (string) error
